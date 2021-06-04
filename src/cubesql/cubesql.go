@@ -1,3 +1,26 @@
+//
+//         ___              __                        ____  ____     _ __
+//        /   |  ____  ____/ /_______  ____ ______   / __ \/ __/__  (_) /
+//       / /| | / __ \/ __  / ___/ _ \/ __ `/ ___/  / /_/ / /_/ _ \/ / / 
+//      / ___ |/ / / / /_/ / /  /  __/ /_/ (__  )  / ____/ __/  __/ / /  
+//     /_/  |_/_/ /_/\__,_/_/   \___/\__,_/____/  /_/   /_/  \___/_/_/
+//                                                          
+//  Product:     cubeSQL.go - Wrapper for the cubeSQL C SDK database driver
+//  Version:     Revision: 1.0.0, Build: 1
+//  Date:        2021/06/03 21:58:48
+//  Author:      Andreas Pfeil <patreon@familie-pfeil.com>
+//
+//  Description: golang wrapper for the cubeSQL database client driver based 
+//               on Marco Bambini's C SDK.
+//
+//  Usage:       import "cubesql"
+//
+//  License:     BEER license / MIT license
+//
+//  Copyright (C) 2021 by Andreas Pfeil
+//
+// -----------------------------------------------------------------------TAB=2
+
 package cubesql
 
 //// #cgo CFLAGS: -Wno-multichar -Isdk -Isdk/zlib -Isdk/crypt
@@ -21,7 +44,7 @@ type CubeSQLCursor 							*C.struct_csqlc
 type CubeSQLPrepairedStatement 	C.struct_csqlvm
 
 
-func newCubeSQL() *CubeSQL {
+func New() *CubeSQL {
 	this := CubeSQL { db: nil }
 	return &this
 } 

@@ -1,6 +1,6 @@
 # cubeSQL golang client
 
-Bug free, feature complete, uses the nativ C API.
+Bug free, feature complete, uses Marco Bambinis nativ C SDK.
 
 ## Usage example
 
@@ -10,11 +10,9 @@ package main
 import "cubesql"
 
 func main() {
-	cube := newCubeSQL()
-	result := cube.connect( "127.0.0.1", 4430, "loginname", "password", 10, 0 );
-	
-	
-	
+	cube := cubesql.New()
+	result := cube.connect( "localhost", 4430, "loginname", "password", 10, 0 );
+	println( result )
 	time.Sleep( 10 * time.Second )
 	cube.disconnect( 0 );
 }
@@ -38,7 +36,7 @@ func main() {
 
 ## Contributors
 
-- [Marco Bambini](https://github.com/marcobambini) (Author of cubeSQL and the original PHP client)
+- [Marco Bambini](https://github.com/marcobambini) (Author of cubeSQL and the original nativ client SDK)
 
 ## Acknowledgments
 
@@ -46,9 +44,9 @@ func main() {
 
 ## See also
 
-- [cubeSQL for Python2](https://github.com/andreaspfeil/CubeSQL.Python2)
-- [cubeSQL for Python3](https://github.com/andreaspfeil/CubeSQL.Python3)
-- [cubeSQL für .NET](https://github.com/andreaspfeil/CubeSQL.NET)
+- [cubeSQL.Python2](https://github.com/andreaspfeil/CubeSQL.Python2)
+- [cubeSQL.Python3](https://github.com/andreaspfeil/CubeSQL.Python3)
+- [cubeSQL.NET](https://github.com/andreaspfeil/CubeSQL.NET)
 
 ## License
 
