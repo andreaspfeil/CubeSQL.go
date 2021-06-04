@@ -1,0 +1,14 @@
+// in sdk
+
+// gcc -I. -I./zlib -I./crypt cubesql.c -c -o cubesql.o
+// gcc -I. -I./zlib -I./crypt zlib/zlib.c -c -o zlib.o
+// gcc -I. -I./zlib -I./crypt crypt/aescrypt.c -c -o aescrypt.o
+// gcc -I. -I./zlib -I./crypt crypt/aeskey.c -c -o aeskey.o
+// gcc -I. -I./zlib -I./crypt crypt/aestab.c -c -o aestab.o
+// gcc -I. -I./zlib -I./crypt crypt/base64.c -c -o base64.o
+// gcc -I. -I./zlib -I./crypt crypt/pseudorandom.c -c -o pseudorandom.o
+// gcc -I. -I./zlib -I./crypt crypt/sha1.c -c -o sha1.o
+// ar rcs x.a *.o
+
+
+// gcc -fPIC -Isdk -Isdk/zlib -Isdk/crypt cubesql.c -o cubesql.a
