@@ -26,18 +26,14 @@ package main
 
 // go build -o cubeSQL main.go
 
-////////////// alles weitere da unten geht nicht/will man nicht = dynamic
-
-// gcc -fPIC -shared -Isdk -Isdk/zlib -Isdk/crypt cubesql.c -o cubesql.so
-// gcc -fPIC -shared -Isdk -Isdk/zlib -Isdk/crypt sdk/zlib/zlib.c sdk/crypt/*.c cubesql.c -o libcubesql.so
-
 import "cubesql"
+import "time"
 
 
 func main() {
   cube := cubesql.New()
-  result := cube.connect( "localhost", 4430, "loginname", "password", 10, 0 );
+  result := cube.Connect( "localhost", 4430, "loginname", "password", 10, 0 );
   println( result )
   time.Sleep( 10 * time.Second )
-  cube.disconnect( 0 );
+  cube.Disconnect( 0 );
 }

@@ -23,17 +23,13 @@
 
 package cubesql
 
-//// #cgo CFLAGS: -Wno-multichar -Isdk -Isdk/zlib -Isdk/crypt
-//// #cgo LDFLAGS: -L. -lcubesql -ldl
-
-// #cgo CFLAGS: -Wno-multichar -Isdk -Isdk/zlib -Isdk/crypt
-// #cgo LDFLAGS: -L./sdk -l:libcubesql.a -ldl
+// #cgo CFLAGS: -Wno-multichar -Isdk/C_SDK
+// #cgo LDFLAGS: -L. -lcubesql -ldl
 // #include <stdlib.h>
 // #include "cubesql.h"
 import "C"
 import (
   "unsafe"
-	"time"
 )
 
 type CubeSQL struct {
@@ -49,7 +45,7 @@ func New() *CubeSQL {
 	return &this
 } 
 
-func (this *CubeSQL ) connect( host string, port int, userName string, password string, timeout int, encryption int ) int {
+func (this *CubeSQL ) Connect( host string, port int, userName string, password string, timeout int, encryption int ) int {
 	Host := C.CString( host )
 	defer C.free( unsafe.Pointer( Host ) )
 
@@ -65,7 +61,7 @@ func (this *CubeSQL ) connect( host string, port int, userName string, password 
 	}
 	return res;
 }
-func (this *CubeSQL ) disconnect( gracefully int ) {
+func (this *CubeSQL ) Disconnect( gracefully int ) {
 	C.cubesql_disconnect( this.db, C.int( gracefully ) )
 }
 func (this *CubeSQL ) Execute( sql string ) int {
