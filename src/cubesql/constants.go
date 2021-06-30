@@ -51,15 +51,15 @@ const SSL_AES128	=	SSL + AES128
 const SSL_AES192	=	SSL + AES192
 const SSL_AES256	=	SSL + AES256
 
-const CUBESQL_COLNAME = 0 // flag used in cubesql_cursor_getfield
-const CUBESQL_CURROW	= -1
-const CUBESQL_COLTABLE	= -2
-const CUBESQL_ROWID = -665 - 1
+const COLNAME = 0 // flag used in cubesql_cursor_getfield
+const CURROW	= -1
+const COLTABLE	= -2
+const ROWID = -665 - 1
 
-const CUBESQL_SEEKNEXT	= -2 // flag used in cubesql_cursor_seek
-const CUBESQL_SEEKFIRST	= -3
-const CUBESQL_SEEKLAST	= -4
-const CUBESQL_SEEKPREV	= -5
+const SEEKNEXT	= -2 // flag used in cubesql_cursor_seek
+const SEEKFIRST	= -3
+const SEEKLAST	= -4
+const SEEKPREV	= -5
 
 const SSL_LIBRARY_PATH	=	1 // SSL
 const CRYPTO_LIBRARY_PATH = 2

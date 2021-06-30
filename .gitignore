@@ -1,5 +1,6 @@
 cubeSQLgo.tmproj
 todo.txt
 src/cubesql/libcubesql.a
-src/test
+src/demo
 src/cubesql/sdk/
+.DS_Store
