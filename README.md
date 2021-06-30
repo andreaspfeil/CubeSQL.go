@@ -94,8 +94,9 @@ cd ../..
 export GOPATH=`pwd`
 echo $GOPATH
 cd src
+go run .
 ```
-5. Why does the example programm not work?
+5. Why does the example programm not work?\
 Make sure that your database is running and can be reached from your workstation. Also change your credentials in:
 ```golang
 cube.Connect( "dbhost", 4430, "loginname", "password", 10, 0 ) 
@@ -106,6 +107,14 @@ cube.Use( "demo" )
 ```
 ### Windows
 If you are interersted in how to install the CubeSQL.go driver on Windows, drop me a line.
+
+## Future Ideas
+- [ ] Windows Installer 
+- [ ] More handy methods
+- [ ] Better Error handling
+- [ ] Make a go module for even easier integration into your project
+
+If you are interersted in any of this, drop me a line or please consider buying me a beer...
 
 ## Documentation
 
